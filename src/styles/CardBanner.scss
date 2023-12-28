@@ -1,0 +1,97 @@
+@import "_mixin";
+@import "_animation";
+
+.CardBanner {
+    margin-top: 343px;
+    height: 349px;
+    width: 100%;
+    box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.45);
+    position: relative;
+    @include media(3000px, 800px) {
+        width: 600px;
+        position: absolute;
+        right: 0;
+        border-radius: 16px;
+        margin-right: 17px;
+    };
+    
+    & .close_btn {
+        position: absolute;
+        background: none;
+        border: none;
+        padding: 0;
+        top: 15px;
+        right: 15px;
+        z-index: 5;
+        cursor: pointer;
+    }
+
+    & .content_bg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        object-fit: cover;
+    }
+
+    & .content_bg_sm {
+        @include media(3000px, 800px) {
+            display: none;
+        };
+    }
+
+    & .content_bg_lg {
+        border-radius: 16px;
+        @include media(799px, 320px) {
+            display: none;
+        };
+    }
+
+    & .content_text {
+        position: relative;
+        z-index: 2;
+        @include flex_dir_align_justify(column, center, space-evenly);
+        @include media(3000px, 800px) {
+           margin-left: 40%;
+        };
+
+        & h1 {
+            @include size_weight_height_color(46px, 500, 110%, #FFFFFF);
+            margin-bottom: 25px;
+            margin-top: 75px;
+        }
+        & h2 {
+            @include size_weight_height_color(40px, 500, 110%, rgba(210, 152, 26, 0.6));
+            margin-bottom: 14px;
+        }
+        & p {
+            @include size_weight_height_color(16px, 500, 130%, #6C6C70);
+            & span {color: #D7A830};
+            margin-bottom: 40px;
+        }
+
+        & button {
+            @include size_weight_height_color(16px, 500, 130%, rgba(255, 255, 255, 1));
+            border-radius: 14px;
+            opacity: 0.9;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.10);
+            border: none;
+            width: 125px;
+            @include media(3000px, 800px) {
+                width: 256px;
+            };
+
+            &::after {
+                content: "Shop now";
+                @include media(3000px, 800px) {
+                    content: "Shop now through Monday"
+                };
+            }
+        }
+    }
+}
+
+.CardBanner {
+    transform: translateY(20px);
+    animation: fadeIn 0.5s ease-out forwards;
+}

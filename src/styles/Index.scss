@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Graphik LC";
+    src: url("../assets/fonts/graphiklcweb_medium.ttf");
+}
+
+* {
+    font-family: 'Graphik LC', sans-serif;
+}
+
+body {
+    min-height: 200vh;
+    margin: 0 auto;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}

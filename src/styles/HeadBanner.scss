@@ -1,0 +1,102 @@
+@import "_mixin";
+
+.HeadBanner {
+    margin-top: 50px;
+    height: 54px;
+    background: linear-gradient(180deg, #101010 0%, #0F0F0F 100%);
+    @include flex_dir_align_justify(row, center, space-between);
+    @include media(3000px, 800px) {
+        @include flex_dir_align_justify(row, center, normal);
+    };
+
+    & .content_bg {
+        height: 100%;
+        width: 20%;
+        background: url("../assets/media/head_banner_bg.svg") no-repeat 100% 100%;
+    }
+
+    & .content_text_sm {
+        width: 60%;
+        @include flex_dir_align_justify(row, center, space-evenly);
+        @include media(3000px, 601px) {
+            display: none;
+        };
+        
+        & h1 {
+            @include size_weight_height_color(16px, 600, 20px, #FFFFFF);
+
+            & span {
+                color: #D7A830;
+            }
+        }
+
+        & button {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+    }
+
+    & .content_text {
+        width: 100%;
+        @include flex_dir_align_justify(row, center, space-around);
+        @include media(600px, 300px) {
+            display: none;
+        };
+       
+        & .text {
+            width: 70%;
+            @include flex_dir_align_justify(row, center, space-evenly);
+            @include media(3000px, 1450px) {
+                @include flex_dir_align_justify(row, center, center);
+            };
+
+            & h2 {
+                @include flex_dir_align_justify(row, center, normal);
+                @include size_weight_height_color(16px, 600, 20px, #FFFFFF);
+                @include media(3000px, 1450px) {
+                    margin-right: 45px;
+                };
+
+                & p {
+                    & .date {
+                        margin-left: 10px;
+                        @include size_weight_height_color(16px, 400, 20px, #FFFFFF);
+                    }
+                    @include media(1450px, 300px) {
+                        display: none;
+                    };
+                }
+
+                & .text_yellow {
+                    color: #D7A830;
+                }
+            }
+
+            & h3 {
+                @include flex_dir_align_justify(row, center, normal);
+                @include size_weight_height_color(16px, 400, 20px, #FFFFFF);
+                & .text_yellow {
+                    margin-left: 10px;
+                    color: #D7A830;
+                }
+
+                & p {
+                    margin-left: 10px;
+                    @include media(1450px, 300px) {
+                        display: none;
+                    };
+                }
+            }
+        }
+
+        & button {
+            border-radius: 14px;
+            backdrop-filter: blur(12px);
+            padding: 10px 14px;
+            border: none;
+            height: 38px;
+            @include size_weight_height_color(16px, 500, 110%, #0B0B0B);
+        }
+    }
+}
